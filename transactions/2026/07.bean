@@ -147,3 +147,8 @@
 2026-07-31 * "Cloud Service" "美元订阅"
   Assets:HK:HSBC:USD                       -18.00 USD
   Expenses:Digital:Subscription             18.00 USD
+
+2026-07-10 * "Codex Integration it20260710114301" "append lifecycle" #integration
+  testRun: "it20260710114301"
+  Expenses:Food:Meals                        1.23 CNY
+  Assets:CN:Alipay:Balance                  -1.23 CNY
