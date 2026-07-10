@@ -79,7 +79,7 @@
   alias: "其他收入"
 
 2026-01-01 open Expenses:Food:Meals
-  alias: "餐饮正餐（集成测试）"
+  alias: "餐饮正餐"
 2026-01-01 open Expenses:Food:Drinks
   alias: "饮品咖啡"
 2026-01-01 open Expenses:Food:Groceries
@@ -153,6 +153,3 @@
   alias: "期初余额"
 2026-01-01 open Equity:Balance-Adjustments
   alias: "余额调整"
-
-2026-07-10 open Expenses:Test:Integration20260710114301 CNY
-  alias: "Codex integration account"

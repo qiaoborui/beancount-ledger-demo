@@ -1,12 +1,11 @@
-2026-07-01 * "超市（集成测试）" "早餐和水果 updated" #integration
-  testRun: "it20260710114301"
-  Assets:CN:Alipay:Balance                -132.40 CNY
-  Expenses:Food:Groceries                  132.40 CNY
-; deleted 2026-07-10: Codex integration delete test
-; 2026-07-02 * "咖啡店" "拿铁"
-;   Assets:CN:Wechat:Balance                -28.00 CNY
-;   Expenses:Food:Drinks                     28.00 CNY
-; 
+2026-07-01 * "超市" "早餐和水果"
+  Assets:CN:Alipay:Balance               -132.40 CNY
+  Expenses:Food:Groceries                 132.40 CNY
+
+2026-07-02 * "咖啡店" "拿铁"
+  Assets:CN:Wechat:Balance                -28.00 CNY
+  Expenses:Food:Drinks                     28.00 CNY
+
 2026-07-03 * "地铁" "通勤"
   Assets:CN:Wechat:Balance                 -7.00 CNY
   Expenses:Transport:Public                 7.00 CNY
@@ -148,19 +147,3 @@
 2026-07-31 * "Cloud Service" "美元订阅"
   Assets:HK:HSBC:USD                       -18.00 USD
   Expenses:Digital:Subscription             18.00 USD
-
-2026-07-10 * "Codex Integration it20260710114301" "append lifecycle" #integration
-  testRun: "it20260710114301"
-  Expenses:Food:Meals                        1.23 CNY
-  Assets:CN:Alipay:Balance                  -1.23 CNY
-
-2026-07-10 * "Codex Batch A it20260710114301" "batch append A" #integration
-  testRun: "it20260710114301"
-  Expenses:Food:Drinks                       2.34 CNY
-  Assets:CN:Wechat:Balance                  -2.34 CNY
-
-2026-07-10 * "Codex Batch B it20260710114301" "batch append B" #integration
-  testRun: "it20260710114301"
-  Expenses:Transport:Public                  3.45 CNY
-  Assets:CN:Wechat:Balance                  -3.45 CNY
-; Codex editor integration it20260710114301
