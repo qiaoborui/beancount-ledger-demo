@@ -2,10 +2,11 @@
   testRun: "it20260710114301"
   Assets:CN:Alipay:Balance                -132.40 CNY
   Expenses:Food:Groceries                  132.40 CNY
-2026-07-02 * "咖啡店" "拿铁"
-  Assets:CN:Wechat:Balance                -28.00 CNY
-  Expenses:Food:Drinks                     28.00 CNY
-
+; deleted 2026-07-10: Codex integration delete test
+; 2026-07-02 * "咖啡店" "拿铁"
+;   Assets:CN:Wechat:Balance                -28.00 CNY
+;   Expenses:Food:Drinks                     28.00 CNY
+; 
 2026-07-03 * "地铁" "通勤"
   Assets:CN:Wechat:Balance                 -7.00 CNY
   Expenses:Transport:Public                 7.00 CNY
