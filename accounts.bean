@@ -153,3 +153,6 @@
   alias: "期初余额"
 2026-01-01 open Equity:Balance-Adjustments
   alias: "余额调整"
+
+2026-07-10 open Expenses:Test:Integration20260710114301 CNY
+  alias: "Codex integration account"
