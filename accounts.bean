@@ -79,7 +79,7 @@
   alias: "其他收入"
 
 2026-01-01 open Expenses:Food:Meals
-  alias: "餐饮正餐"
+  alias: "餐饮正餐（集成测试）"
 2026-01-01 open Expenses:Food:Drinks
   alias: "饮品咖啡"
 2026-01-01 open Expenses:Food:Groceries
