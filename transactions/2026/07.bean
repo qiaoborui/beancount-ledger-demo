@@ -147,3 +147,8 @@
 2026-07-31 * "Cloud Service" "美元订阅"
   Assets:HK:HSBC:USD                       -18.00 USD
   Expenses:Digital:Subscription             18.00 USD
+
+2026-07-10 * "视频会员" "冲销：月度订阅"
+  reversal: TRUE
+  Assets:CN:Alipay:Balance                  35.00 CNY
+  Expenses:Digital:Subscription            -35.00 CNY
