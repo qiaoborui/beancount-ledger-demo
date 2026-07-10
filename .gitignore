@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+.DS_Store
+runtime/
+*.csv
+*.xls
+*.xlsx
+*.pdf

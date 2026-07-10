@@ -1,0 +1,76 @@
+name: Index Ledger Web
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      ledger_ref:
+        description: "Ledger branch, tag, or SHA to index; defaults to the current branch"
+        required: false
+        type: string
+
+concurrency:
+  group: ledger-web-indexer
+  cancel-in-progress: false
+
+jobs:
+  index:
+    name: Index ledger into Ledger Web
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check required configuration
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          if [[ -z "$DATABASE_URL" ]]; then
+            echo "Missing required GitHub Actions secret: DATABASE_URL" >&2
+            exit 1
+          fi
+
+      - name: Checkout ledger
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ledger_ref || github.ref_name }}
+          path: private-ledger
+          fetch-depth: 1
+
+      - name: Checkout Ledger Web app
+        uses: actions/checkout@v4
+        with:
+          repository: qiaoborui/beancount-ledger-web
+          ref: ${{ vars.LEDGER_WEB_APP_REF || 'main' }}
+          path: ledger-web
+          fetch-depth: 1
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: ledger-web/server/go.mod
+          cache-dependency-path: ledger-web/server/go.sum
+
+      - name: Index ledger into Postgres
+        working-directory: ledger-web/server
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          LEDGER_ROOT: ${{ github.workspace }}/private-ledger
+          LEDGER_GIT_BRANCH: ${{ inputs.ledger_ref || github.ref_name }}
+          POSTGRES_MAX_OPEN_CONNS: ${{ vars.POSTGRES_MAX_OPEN_CONNS || '2' }}
+          POSTGRES_MAX_IDLE_CONNS: ${{ vars.POSTGRES_MAX_IDLE_CONNS || '1' }}
+          POSTGRES_CONN_MAX_IDLE_SECONDS: ${{ vars.POSTGRES_CONN_MAX_IDLE_SECONDS || '60' }}
+        run: go run ./cmd/ledger-indexer
+
+      - name: Summarize indexed ledger
+        if: always()
+        run: |
+          {
+            echo "## Ledger Web indexer"
+            echo
+            echo "- Ledger ref: \`${{ inputs.ledger_ref || github.ref_name }}\`"
+            echo "- Ledger commit: \`$(git -C private-ledger rev-parse HEAD 2>/dev/null || echo unavailable)\`"
+            echo "- App ref: \`${{ vars.LEDGER_WEB_APP_REF || 'main' }}\`"
+            echo "- App commit: \`$(git -C ledger-web rev-parse HEAD 2>/dev/null || echo unavailable)\`"
+          } >> "$GITHUB_STEP_SUMMARY"
