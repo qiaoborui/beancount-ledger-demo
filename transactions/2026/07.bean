@@ -1,7 +1,7 @@
-2026-07-01 * "超市" "早餐和水果"
-  Assets:CN:Alipay:Balance               -132.40 CNY
-  Expenses:Food:Groceries                 132.40 CNY
-
+2026-07-01 * "超市（集成测试）" "早餐和水果 updated" #integration
+  testRun: "it20260710114301"
+  Assets:CN:Alipay:Balance                -132.40 CNY
+  Expenses:Food:Groceries                  132.40 CNY
 2026-07-02 * "咖啡店" "拿铁"
   Assets:CN:Wechat:Balance                -28.00 CNY
   Expenses:Food:Drinks                     28.00 CNY
