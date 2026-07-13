@@ -13,7 +13,7 @@ sanitized demo fixtures copied from the application's public
 - Seven months of 2026 transactions covering income, daily spending,
   transfers, credit cards, reimbursements, investments, and multi-currency
   balances.
-- 379 postings across CNY, HKD, and USD.
+- 391 postings across CNY, HKD, USD, and three synthetic securities.
 - Example Alipay, WeChat Pay, and bank import configuration.
 - A GitHub Actions indexer that publishes `main` into the dedicated Ledger Web
   Preview Postgres read model after every push.

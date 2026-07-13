@@ -42,6 +42,18 @@
   alias: "支付宝基金 / 理财持仓"
   group: "wealth"
 
+2026-01-01 open Assets:US:DemoBroker:Growth
+  alias: "星河证券成长账户"
+  group: "wealth"
+
+2026-01-01 open Assets:US:DemoBroker:Retirement
+  alias: "星河证券长期账户"
+  group: "wealth"
+
+2026-01-01 open Assets:CN:DemoBroker:Securities
+  alias: "华夏证券 A 股账户"
+  group: "wealth"
+
 2026-01-01 open Assets:CN:HousingFund CNY
   alias: "住房公积金账户"
   group: "wealth"

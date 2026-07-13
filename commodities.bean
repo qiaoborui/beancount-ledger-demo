@@ -1,3 +1,12 @@
 2026-01-01 commodity CNY
 2026-01-01 commodity HKD
 2026-01-01 commodity USD
+
+2026-01-01 commodity NVDA
+  name: "NVIDIA Corporation"
+
+2026-01-01 commodity QQQ
+  name: "Invesco QQQ Trust"
+
+2026-01-01 commodity SZ159350
+  name: "Fullgoal Shenzhen 50 Index ETF (159350)"
